@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style> 
+ </style>
+        </head>
+        <body>
+            
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarjeta - Romeo E.B.L.</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    :root{
+      --bg1: #0f172a; /* navy */
+      --bg2: #070617; /* near black */
+      --accent: #7c3aed; /* purple */
+      --accent-2: #06b6d4; /* teal */
+      --whatsapp: #25D366; /* verde whatsapp */
+      --glass: rgba(255,255,255,0.06);
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 60%);
+      display:flex;align-items:center;justify-content:center; padding:2rem;
+      -webkit-font-smoothing:antialiased; color:#e6eef8;
+      overflow:hidden;
+    }
+
+    /* Floating decorative blobs with color shift */
+    .blob{
+      position:absolute; border-radius:50%; filter:blur(40px); opacity:0.7;
+      mix-blend-mode:screen; pointer-events:none;
+      animation: colorShift 15s ease-in-out infinite alternate;
+    }
+    .blob.one{
+      width:380px; height:380px; left:-12%; top:-10%; 
+      background:linear-gradient(135deg, var(--accent), transparent 60%); 
+      animation-duration:18s;
+    }
+    .blob.two{
+      width:260px; height:260px; right:-8%; bottom:-6%; 
+      background:linear-gradient(135deg, var(--accent-2), transparent 60%); 
+      animation-duration:14s; 
+      animation-direction:reverse;
+    }
+    
+    @keyframes colorShift {
+      0% { filter: blur(40px) hue-rotate(0deg); }
+      50% { filter: blur(40px) hue-rotate(15deg); }
+      100% { filter: blur(40px) hue-rotate(-10deg); }
+    }
+
+    /* Card layout - sin animaciones */
+    .card-hero{
+      width:100%; max-width:520px; border-radius:18px; padding:2rem; 
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.04);
+      position:relative; overflow:hidden;
+    }
+
+    .title{
+      font-weight:700; letter-spacing:0.6px; font-size:1.45rem;
+    }
+    .subtitle{ font-weight:600; opacity:0.92; font-size:0.95rem; }
+    .muted{ opacity:0.75; font-size:0.92rem; }
+
+    /* Accent line */
+    .accent-line{
+      height:6px; width:64px; border-radius:6px; 
+      background:linear-gradient(90deg,var(--accent),var(--accent-2)); 
+      box-shadow:0 6px 18px rgba(124,58,237,0.12); 
+      margin-bottom:1rem;
+    }
+
+    /* Info row */
+    .info-row{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
+    .badge-role{
+      padding:.375rem .7rem; border-radius:999px; font-weight:600; 
+      background:rgba(124,58,237,0.12); color:var(--accent); 
+      border:1px solid rgba(124,58,237,0.08);
+    }
+
+    /* CTA buttons - sin animaciones */
+    .phone-btn, .whatsapp-btn{font-weight:700; letter-spacing:.2px}
+    .phone-pill, .whatsapp-pill{
+      display:inline-flex; gap:.6rem; align-items:center; 
+      padding:.55rem .85rem; border-radius:999px; 
+      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); 
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .whatsapp-pill {
+      background: linear-gradient(90deg, rgba(37,211,102,0.1), rgba(37,211,102,0.05));
+      border:1px solid rgba(37,211,102,0.08);
+    }
+
+    /* Small icons - sin animaciones */
+    .phone-icon, .whatsapp-icon{
+      display:inline-grid; place-items:center; width:2rem; height:2rem; 
+      border-radius:8px; 
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); 
+      box-shadow: 0 6px 14px rgba(2,6,23,0.45);
+    }
+    .whatsapp-icon {
+      background: linear-gradient(180deg, rgba(37,211,102,0.1), rgba(37,211,102,0.05));
+    }
+
+    /* Footer small text */
+    .small-note{ font-size:.82rem; opacity:0.6 }
+
+    /* Responsive tweaks */
+    @media (max-width:540px){
+      .card-hero{padding:1.25rem; border-radius:14px}
+      .title{font-size:1.25rem}
+    }
+
+    /* Animación inicial de entrada */
+    @keyframes fadeIn { from{ opacity:0 } to{ opacity:1 } }
+    .card-hero{ animation: fadeIn .8s ease-out both; }
+
+  </style>
+
+
+  <div class="blob one" aria-hidden="true"></div>
+  <div class="blob two" aria-hidden="true"></div>
+
+  <main class="d-flex align-items-center justify-content-center w-100 h-100">
+    <section class="card-hero" role="region" aria-label="Tarjeta de presentación Romeo E.B.L.">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <div>
+          <div class="accent-line" aria-hidden="true"></div>
+          <h1 class="title mb-1">Romeo E.B.L.</h1>
+          <div class="subtitle muted">Ingeniero en software</div>
+        </div>
+        <div class="text-end">
+          <span class="badge-role">Especialista .NET</span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <p class="muted mb-1">Con foco en soluciones empresariales y aplicaciones modernas usando .NET y herramientas relacionadas. </p>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <div class="info-row">
+          <div class="phone-pill" id="phonePill" role="button" tabindex="0" onclick="callOrCopy()" onkeydown="if(event.key==='Enter') callOrCopy()" title="Llamar o copiar número">
+            <div class="phone-icon" aria-hidden="true">📞</div>
+            <div>
+              <div class="small-note">Teléfono</div>
+              <div class="phone-btn">+502 3121 5181</div>
+            </div>
+          </div>
+          
+          <div class="whatsapp-pill" id="whatsappPill" role="button" tabindex="0" onclick="sendWhatsApp()" onkeydown="if(event.key==='Enter') sendWhatsApp()" title="Enviar mensaje por WhatsApp">
+            <div class="whatsapp-icon" aria-hidden="true">💬</div>
+            <div>
+              <div class="small-note">WhatsApp</div>
+              <div class="whatsapp-btn">Contactar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-3" style="border-color:rgba(255,255,255,0.04);">
+
+      <!-- Bootstrap Toast for feedback -->
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1100">
+        <div id="liveToast" class="toast align-items-center text-bg-dark border-0" role="status" aria-live="polite" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body" id="toastBody">Copiado al portapapeles</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS (for toast) and tiny custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Toast initialization
+    const toastLiveExample = document.getElementById('liveToast');
+    const toastBody = document.getElementById('toastBody');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    
+    function showToast(message) {
+      toastBody.textContent = message;
+      toast.show();
+    }
+
+    // Phone copy function
+    function callOrCopy() {
+      const phoneNumber = '+50231215181';
+      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = `tel:${phoneNumber}`;
+      } else {
+        navigator.clipboard.writeText(phoneNumber).then(() => {
+          showToast('Número copiado al portapapeles');
+        });
+      }
+    }
+
+    // WhatsApp function
+    function sendWhatsApp() {
+      const phoneNumber = '50231215181';
+      const message = encodeURIComponent('Hola Romeo, vi tu tarjeta de presentación y me gustaría contactarte.');
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+      showToast('Redirigiendo a WhatsApp...');
+    }
+  </script>
+
+
+            <script> </script>
+        
+    
+</body>
